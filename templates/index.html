@@ -1,0 +1,11 @@
+{% extends 'layout.html'%} {%block tittle%} Inicio {%endblock%} {% block body %}
+<div id="indice">
+  <div class="container-fluid">
+    <form id="formu2" action="/libros" method="POST">
+      <div>
+        <label for="titulo">Buscador de  libros</label>
+        <input type="text" id="busqueda" name="busqueda" placeholder="Nombre del libro o isbn" Required/>
+      <button type="submit">Buscar </button>
+  </div>
+</div>
+{%endblock%}

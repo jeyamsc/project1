@@ -1,0 +1,93 @@
+{% extends 'layout.html' %} {% block title %} Libro {% endblock %} {% block body
+%}
+<div id="bookCard">
+  <image id="imagenlibro" src="{{book['image']}}" />
+  <div>
+    <p class="font-bold m-3">Titulo del libro: {{book['title']}}</p>
+    <p class="font-bold m-3">Autor del libro: {{book['autor']}}</p>
+    <p class="font-bold m-3">Año de publicación: {{book['year']}}</p>
+    <p class="font-bold m-3">Contador de reviews: {{book['review_count']}}</p>
+    <p class="font-bold m-3">Promedio de puntajes: {{book['average_score']}}</p>
+  </div>
+</div>
+
+<div class="card-footer" id="PuntuarElLibro">
+  <form action="/libro?isbn={{book['isbn']}}" method="post">
+    <div class="input-group">
+      <p id="info" class="float-left m-4 font-bold text-pink-800">
+        Puntuar El Libro
+      </p>
+      <select id="rating" name="rating" class="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <input type="text" name="comentario"/ id="comentarioEspacio">
+      <button type="submit" id="comentarioEspacio">Enviar</button>
+    </div>
+  </form>
+</div>
+
+<div class="ex-basic-2" id="PuntuacionesDeLibros">
+  <div class="container mt-36">
+    <div class="col-lg-12">
+      {% for comentario in book['comentarios'] %}
+      <div class="card-footer card-comments">
+        <div class="card-comment">
+          {% if comentario[6] == iduser %}
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="d-flex align-items-end mb-3 m-1" style="margin-left: 100%">
+                  <button id="lapiz" class="link-muted" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" onclick="$('#comentario').val('{{comentario}}')">
+                    Editar
+                  </button>
+                  <a href="/eliminar_comentario?id={{comentario[0]}}&isbn={{book['isbn']}}" class="link-muted" id="trash">
+                    Eliminar
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">
+                    Editar Comentario
+                  </h5>
+                </div>
+                <div class="modal-body">
+                  <form method="post" action="/actualizar_comentario?id={{comentario[0]}}&isbn={{book['isbn']}}">
+                    <div class="form-group">
+                      <textarea id="comentario" name="comentario" class="form-control" value="{{comentario['comentario']}}" id="message-text"
+                      ></textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="submit" class="rounded-5 p-5 bg-pink-800 text-white mt-4 font-bold py-2 px-4 rounded"> Actualizar </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+
+          <div class="container-fluid" id="comentario">
+            <a>
+              <span id="usuario" class="font-bold m-3">{{comentario['userbro']}}</span>
+              <span class="text-muted m-3">Calificacion: {{comentario['rating']}} / 5</span>
+              <h1 class="m-3">{{comentario['comentario']}}</h1>
+              <span class="text-muted float-right">{{comentario['fecha']}}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

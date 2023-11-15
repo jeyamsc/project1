@@ -1,0 +1,47 @@
+{%extends 'base.html'%} {%block title%} Login {%endblock%} {%block contenido%}
+
+<!-- Section: Design Block -->
+<div id="login">
+  <section class="vh-100">
+    <div class="container-fluid">
+      <div id = "CardLogin">
+        <div>
+          <form id="formu" action="/login" method="POST">
+            <div>
+              <label class="block text-black text-sm font-bold mb-2" for="form3Example3">Usuario</label>
+              <input
+                type="text"
+                name="usuario"
+                id="form3Example3"
+                placeholder="Nickname"
+              />
+              <label
+                class="mt-5 block text-black text-sm font-bold mb-2"
+                for="form3Example4"
+                >Contraseña</label
+              >
+              <input
+                name="password1"
+                type="password"
+                id="form3Example4"
+              />
+            </div>
+
+            <button
+              type="submit"
+            >
+              Login
+            </button>
+            <p>
+              Registrate Gratis
+              <a href="/register" class="link-danger">Registrarse</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Section: Design Block -->
+{%endblock%}

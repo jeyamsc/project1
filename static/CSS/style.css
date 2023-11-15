@@ -1,0 +1,135 @@
+body{
+  background: url(../images/libros.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+  background-color: rgb(190, 193, 197);
+  font-family: 'Dancing Script', cursive;
+}
+
+nav div, nav div a{
+  color: black;
+  text-decoration: none;
+  font: bold;
+  font-family: 'Dancing Script', cursive;
+  font-size: large;
+}
+#indice, #indice form div{
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  background-color: rgb(23, 130, 138);
+  margin-top: 1rem;
+  border-radius: 10px;
+  font-family: 'Dancing Script', cursive;
+  font-size: large;
+}
+
+#indice form div label, #indice form div input{
+  color: aliceblue;
+  padding: 0.5rem;
+  margin: 1rem;
+}
+
+#indice form div button{
+  padding: 0.5rem;
+  margin: 1rem;
+  border-radius: 10px;
+}
+
+table{
+  background-color: rgba(240, 248, 255, 0.5);
+}
+
+#bookCard{
+  background-color: rgba(240, 248, 255, 0.5);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  display: flex;
+}
+
+#imagenlibro{
+  width: 20%;
+  height: 10%;
+}
+
+#PuntuarElLibro{
+  background-color: aliceblue;
+  border-radius: 10px;
+  margin: 1rem;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+#PuntuacionesDeLibros{
+  background-color: aliceblue;
+  border-radius: 10px;
+  margin: 1rem;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+}
+
+#comentarioEspacio, .rating{
+  background-color: aliceblue;
+  border-radius: 10px;
+  margin: 1rem;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+}
+
+#trash, #lapiz{
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 0.5rem;
+  margin: 1rem;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+#CardLogin{
+  background-color: aliceblue;
+  border-radius: 10px;
+  margin-top: 2rem;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1rem;
+}
+
+#CardLogin2{
+  background-color: aliceblue;
+  border-radius: 10px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1rem;
+}

@@ -1,0 +1,27 @@
+{% extends 'layout.html'%} {%block tittle%} Libros {%endblock%} {% block body %}
+
+<table class="mt-5 table table-gray border-separate border-spacing-px table-striped">
+  <thead>
+    <tr>
+      <th>ISBN</th>
+      <th>Titulo</th>
+      <th>Autor</th>
+      <th>Año</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for book in book %}
+    <tr>
+      <td>
+        <a href="{{ url_for('libro', isbn=book['isbn']) }}">{{book["isbn"]}}</a>
+      </td>
+      <td>{{book["title"]}}</td>
+      <td>{{book["autor"]}}</td>
+      <td>{{book["year"]}}</td>
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{%endblock%}

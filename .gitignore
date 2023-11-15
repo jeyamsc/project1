@@ -1,10 +1,2 @@
-# Carpetas
 __pycache__/
 venv/
-
-# Archivos
-*.py
-*.pyc
-*.pyo
-*.env
-*.db

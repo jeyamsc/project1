@@ -5,3 +5,5 @@ sqlalchemy-orm
 psycopg2
 helpers
 fuzzywuzzy
+python-dotenv
+requests
